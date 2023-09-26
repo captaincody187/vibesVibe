@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: white;
-}
-
 .head {
   font-family: 'Passion One', cursive;
 }
@@ -17,10 +13,11 @@ body {
 }
 
 .glass {
-  background: rgba(193, 113, 113, 0);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.52);
 }
