@@ -1,10 +1,13 @@
 import { useState } from 'react';
-
+import Button from '@mui/material/Button';
+import ShoutOut from '../components/ShoutOut'
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
+  const [showShoutOut, setShowShoutOut] = useState(false);
 
   return (
-    <nav className="w-full bg-slate-200 shadow-xl sm:top-0 head">
+
+    <nav className="w-full bg-slate-200 fixed shadow-xl sm:top-0 head">
     <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -56,12 +59,21 @@ const Navbar = () => {
         >
           <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             <li className="text-gray-600 hover:text-blue-600">
-              <a href="javascript:void(0)" className='text-lg'>shoutOuts</a>
+              
+            <Button
+              onClick={() => setShowShoutOut(!showShoutOut)}
+              className="text-lg"
+            >
+              ShoutOuts
+            </Button>
+           
             </li>
-            {/* Add more navigation links as needed */}
+           
           </ul>
+
         </div>
-      </div>
+      </div>  
+      {showShoutOut && <ShoutOut />}
     </nav>
   );
 };
